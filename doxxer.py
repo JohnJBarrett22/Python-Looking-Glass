@@ -152,3 +152,34 @@ ello = f'https://ello.co/{username}'
 tracky = f'https://tracky.com/user/~{username}'
 
 basecamp = f'https://{username}.basecamphq.com/login'
+
+WEBSITES = [
+instagram, facebook, twitter, youtube, blogger, google_plus, reddit, wordpress, pinterest, github, tumblr, flickr, steam, vimeo, soundcloud, disqus, medium, deviantart, vk, aboutme, imgur, 
+flipboard, slideshare, fotolog, spotify, mixcloud, scribd, badoo, patreon, bitbucket, dailymotion, etsy, cashme, behance, goodreads, instructables, keybase, kongregate, livejournal, angellist, 
+last_fm, dribbble, codecademy, gravatar, pastebin, foursquare, roblox, gumroad, newsground, wattpad, canva, creative_market, trakt, five_hundred_px, buzzfeed, tripadvisor, hubpages, contently, 
+houzz, blipfm, wikipedia, hackernews, reverb_nation, designspiration, bandcamp, colourlovers, ifttt, ebay, slack, okcupid, trip, ello, tracky, basecamp,
+]
+
+def outer_func(colour):
+    def inner_function(msg):
+        print(f'{colour}{msg}')
+    return inner_function
+
+GREEN = outer_func('\033[92m')
+YELLOW = outer_func('\033[93m')
+RED = outer_func('\033[91m')
+
+def banner():
+    YELLOW(r'''
+.____                  __   .__                
+|    |    ____   ____ |  | _|__| ____    ____  
+|    |   /  _ \ /  _ \|  |/ /  |/    \  / ___\ 
+|    |__(  <_> |  <_> )    <|  |   |  \/ /_/  >
+|_______ \____/ \____/|__|_ \__|___|  /\___  / 
+        \/                 \/       \//_____/  
+  ________.__                                  
+ /  _____/|  | _____    ______ ______          
+/   \  ___|  | \__  \  /  ___//  ___/          
+\    \_\  \  |__/ __ \_\___ \ \___ \           
+ \______  /____(____  /____  >____  >          
+        \/          \/     \/     \/ ''')
