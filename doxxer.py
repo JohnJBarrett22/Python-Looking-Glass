@@ -160,9 +160,9 @@ last_fm, dribbble, codecademy, gravatar, pastebin, foursquare, roblox, gumroad, 
 houzz, blipfm, wikipedia, hackernews, reverb_nation, designspiration, bandcamp, colourlovers, ifttt, ebay, slack, okcupid, trip, ello, tracky, basecamp,
 ]
 
-def outer_func(colour):
+def outer_func(color):
     def inner_function(msg):
-        print(f'{colour}{msg}')
+        print(f'{color}{msg}')
     return inner_function
 
 GREEN = outer_func('\033[92m')
@@ -183,3 +183,43 @@ def banner():
 \    \_\  \  |__/ __ \_\___ \ \___ \           
  \______  /____(____  /____  >____  >          
         \/          \/     \/     \/ ''')
+
+def search():
+    GREEN(f'[+] Searching for username:{username}')
+    time.sleep(0.5)
+    print('.......')
+    time.sleep(0.5)
+    print('.......\n')
+    time.sleep(0.5)
+
+    GREEN(f'[+] Looking-Glass is working!\n')
+    time.sleep(0.5)
+    print('.......')
+    time.sleep(0.5)
+    print('.......\n')
+    time.sleep(0.5)
+
+    time.sleep(1)
+
+    count = 0
+    match = True
+    for url in WEBSITES:
+        r = requests.get(url)
+
+        if r.status_code == 200:
+            if match == True:
+                GREEN('[+] FOUND MATCHES')
+                match = False
+            YELLOW(f'\n{url} - {r.status_code} - OK')
+            if username in r.text:
+                GREEN(f'POSITIVE MATCH: Username:{username} - text gas been detected in url.')
+            else:
+                GREEN(f'POSITIVE MATCH: Username:{username} - \033[92mtext gas been detected in url, could be a FALSE POSITIVE')
+        count += 1
+
+    total = len(WEBSITES)
+    GREEN(f'FINISHED: A total of {count} MATCHES found out of {total} websites.')
+
+if __name__=='__main__':
+    banner()
+    search()
