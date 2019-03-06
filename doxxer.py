@@ -177,12 +177,12 @@ def banner():
     |    |__(  <_> |  <_> )    <|  |   |  \/ /_/  >
     |_______ \____/ \____/|__|_ \__|___|  /\___  / 
             \/                 \/       \//_____/  
-    ________.__                                  
-    /  _____/|  | _____    ______ ______          
+     ________.__                                  
+    /   _____/|  | _____    ______ ______          
     /   \  ___|  | \__  \  /  ___//  ___/          
     \    \_\  \  |__/ __ \_\___ \ \___ \           
-    \______  /____(____  /____  >____  >          
-            \/          \/     \/     \/ ''')
+    \______  /____ (____  /____  >____  >          
+           \/           \/     \/     \/''')
 
 def search():
     GREEN(f'[+] Searching for username:{username}')
@@ -212,9 +212,9 @@ def search():
                 match = False
             YELLOW(f'\n{url} - {r.status_code} - OK')
             if username in r.text:
-                GREEN(f'POSITIVE MATCH: Username:{username} - text gas been detected in url.')
+                GREEN(f'POSITIVE MATCH: Username:{username} - text has been detected in url.')
             else:
-                GREEN(f'POSITIVE MATCH: Username:{username} - \033[92mtext gas been detected in url, could be a FALSE POSITIVE')
+                GREEN(f'POSITIVE MATCH: Username:{username} - \033[92mtext has been detected in url, could be a FALSE POSITIVE')
         count += 1
 
     total = len(WEBSITES)
